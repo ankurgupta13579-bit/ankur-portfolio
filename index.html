@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>Ankur Gupta | Freelance Video Editor & Motion Designer</title>
   
   <!-- Primary Meta Tags -->
@@ -2154,7 +2154,7 @@
     .stagger-4 { transition-delay: 0.4s; }
 
     /* ==========================================================================
-       RESPONSIVE BREAKPOINTS
+       RESPONSIVE BREAKPOINTS (SMARTPHONE & TABLET OPTIMIZATIONS)
        ========================================================================== */
     @media (max-width: 1024px) {
       .nav-menu, .nav-actions .btn {
@@ -2180,35 +2180,249 @@
       }
     }
 
-    @media (max-width: 640px) {
-      .portfolio-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) {
+      :root {
+        --nav-height: 70px;
       }
-      .process-timeline {
-        grid-template-columns: 1fr;
+      
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
       }
-      .form-group-row {
-        grid-template-columns: 1fr;
+
+      .section-py {
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
       }
-      .contact-form-wrapper {
-        padding: 2rem 1.5rem;
+      
+      .section-header {
+        margin-bottom: 2.5rem;
       }
+      
+      .section-title {
+        font-size: clamp(1.85rem, 6vw, 2.35rem);
+      }
+      
+      .section-subtitle {
+        font-size: 0.95rem;
+      }
+      
+      .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      /* Hero Mobile */
+      .hero-section {
+        min-height: auto;
+        padding-top: calc(var(--nav-height) + 2rem);
+        padding-bottom: 3.5rem;
+      }
+      
+      .hero-title {
+        font-size: clamp(2rem, 8vw, 2.75rem);
+        line-height: 1.2;
+      }
+      
+      .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+      
       .hero-cta-group {
         flex-direction: column;
         width: 100%;
+        gap: 0.85rem;
       }
+      
       .hero-cta-group .btn {
         width: 100%;
+        min-height: 48px;
+        font-size: 0.95rem;
       }
-      .stats-row {
-        grid-template-columns: 1fr 1fr;
-        padding: 1.25rem;
+
+      /* About Section Mobile */
+      .about-image-wrapper {
+        max-width: 320px;
+        margin: 0 auto;
       }
+      
+      .about-badge-floating {
+        position: static;
+        margin: 1.25rem auto 0 auto;
+        max-width: 320px;
+        justify-content: center;
+      }
+
+      /* Services & Process Mobile */
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      
+      .service-card {
+        padding: 1.75rem 1.35rem;
+      }
+      
+      .process-timeline {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      
+      .process-card {
+        padding: 1.75rem 1.35rem;
+      }
+
+      /* Filter Bar Mobile */
+      .filter-bar {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        padding: 0.35rem;
+        gap: 0.35rem;
+      }
+      
+      .filter-btn {
+        flex: 1;
+        text-align: center;
+        padding: 0.6rem 0.5rem;
+        font-size: 0.825rem;
+        white-space: nowrap;
+      }
+
+      /* Portfolio Grid Mobile */
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .portfolio-grid.filter-reels {
+        grid-template-columns: 1fr;
+      }
+      
+      .portfolio-card.card-vertical {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      /* Testimonials Mobile */
       .testimonial-card {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1.35rem;
       }
+      
       .testimonial-quote {
         font-size: 1.05rem;
+        line-height: 1.6;
+      }
+      
+      .quote-icon {
+        top: 1.25rem;
+        right: 1.25rem;
+        width: 36px;
+        height: 36px;
+      }
+
+      /* Contact Mobile */
+      .contact-grid {
+        gap: 2.5rem;
+      }
+      
+      .contact-method-card {
+        padding: 1rem 1.15rem;
+        gap: 1rem;
+      }
+      
+      .contact-method-val {
+        font-size: 0.95rem;
+        word-break: break-all;
+      }
+      
+      .contact-form-wrapper {
+        padding: 2rem 1.25rem;
+      }
+      
+      .form-group-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      
+      .form-input, .form-select, .form-textarea {
+        font-size: 16px !important; /* Prevents iOS auto-zoom on focus */
+        padding: 0.85rem 1rem;
+      }
+
+      /* Video Lightbox Modal Mobile */
+      .video-modal {
+        width: 95vw;
+        max-height: 94vh;
+        border-radius: var(--radius-lg);
+        margin: auto;
+      }
+      
+      .modal-header {
+        padding: 0.85rem 1.15rem;
+      }
+      
+      .modal-title-box h3 {
+        font-size: 1.05rem;
+      }
+      
+      .modal-title-box p {
+        font-size: 0.75rem;
+      }
+      
+      .modal-close-btn {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+      }
+      
+      .modal-footer {
+        padding: 1rem 1.15rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      
+      #modal-project-desc {
+        max-width: 100% !important;
+        font-size: 0.85rem;
+      }
+      
+      .video-modal.vertical-mode {
+        max-width: 95vw;
+      }
+      
+      .video-modal.vertical-mode .modal-player-wrapper {
+        max-height: 65vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-row {
+        grid-template-columns: 1fr 1fr;
+        padding: 1.25rem 0.85rem;
+        gap: 1rem;
+      }
+      
+      .stat-number {
+        font-size: 1.85rem;
+      }
+      
+      .stat-label {
+        font-size: 0.75rem;
+      }
+
+      .about-image-wrapper {
+        max-width: 270px;
+      }
+
+      .nav-logo span:last-child {
+        font-size: 1.15rem;
+      }
+
+      .mobile-drawer {
+        padding: 2rem 1.25rem;
       }
     }
 
@@ -2328,8 +2542,8 @@
     <section id="hero" class="hero-section">
       <!-- Background Looping Showreel Media -->
       <div class="hero-bg-media">
-        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+        <video class="hero-bg-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="satyam-thumb.jpg">
+          <source src="satyam%20video%208_4.mp4" type="video/mp4">
         </video>
         <div class="hero-bg-overlay"></div>
       </div>
@@ -2875,8 +3089,7 @@
     </div>
 
     <div class="modal-player-wrapper">
-      <video id="modal-video-player" class="modal-video-element" controls playsinline preload="metadata">
-        <source src="" type="video/mp4">
+      <video id="modal-video-player" class="modal-video-element" controls playsinline webkit-playsinline preload="auto">
         Your browser does not support HTML5 video.
       </video>
       <iframe id="modal-iframe-player" class="modal-iframe-element" src="" allow="autoplay; fullscreen; picture-in-picture" style="display: none;"></iframe>
@@ -2922,8 +3135,8 @@
         title: "Ankur Gupta — Commercial & Narrative Showreel",
         client: "Selected Clients Worldwide",
         category: "Showreel / Cinematic",
-        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-        posterUrl: "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80",
+        videoUrl: "satyam%20video%208_4.mp4",
+        posterUrl: "satyam-thumb.jpg",
         description: "A showcase of high-end visual pacing, dynamic sound staging, 3D camera tracking, and color grading across fiction, documentary, and brand campaigns.",
         tags: ["Premiere Pro", "After Effects", "DaVinci Resolve", "Sound Design"]
       },
@@ -3277,14 +3490,35 @@
       if (item.videoUrl.includes("youtube.com") || item.videoUrl.includes("vimeo.com")) {
         modalVideo.style.display = "none";
         modalVideo.pause();
+        modalVideo.removeAttribute("src");
+        modalVideo.innerHTML = "";
         modalIframe.style.display = "block";
         modalIframe.src = item.videoUrl + (item.videoUrl.includes("?") ? "&autoplay=1" : "?autoplay=1");
       } else {
         modalIframe.style.display = "none";
         modalIframe.src = "";
         modalVideo.style.display = "block";
+        modalVideo.pause();
+        modalVideo.removeAttribute("src");
+        modalVideo.innerHTML = "";
+        
+        const source = document.createElement("source");
+        source.src = item.videoUrl;
+        source.type = "video/mp4";
+        modalVideo.appendChild(source);
         modalVideo.src = item.videoUrl;
-        modalVideo.play().catch(() => {});
+        modalVideo.load();
+        
+        modalVideo.setAttribute("playsinline", "");
+        modalVideo.setAttribute("webkit-playsinline", "");
+        modalVideo.controls = true;
+
+        const playPromise = modalVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Mobile autoplay blocked, user can tap play button on controls
+          });
+        }
       }
 
       videoModal.showModal();
@@ -3292,15 +3526,31 @@
 
     function closeVideoModal() {
       videoModal.classList.remove("vertical-mode");
-      videoModal.close();
+      if (videoModal.open) {
+        videoModal.close();
+      }
       modalVideo.pause();
-      modalVideo.src = "";
+      modalVideo.removeAttribute("src");
+      modalVideo.innerHTML = "";
+      modalVideo.load();
       modalIframe.src = "";
     }
 
     if (modalCloseBtn) {
       modalCloseBtn.addEventListener("click", closeVideoModal);
     }
+
+    // Tap video to toggle play/pause on touch devices
+    modalVideo.addEventListener("click", (e) => {
+      // Don't intercept control bar taps
+      if (e.offsetY < modalVideo.clientHeight - 50) {
+        if (modalVideo.paused) {
+          modalVideo.play().catch(() => {});
+        } else {
+          modalVideo.pause();
+        }
+      }
+    });
 
     // Close on backdrop click
     videoModal.addEventListener("click", (e) => {
